@@ -1,0 +1,30 @@
+﻿@using deneme.Models.Entity
+@model List<user_table>
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>User</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>User ID</th>
+        <th>User Name</th>
+        <th>User Password</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+        <tr>
+            <th>@ktgr.USERID</th>
+            <td>@ktgr.USERNAME</td>
+            <td>@ktgr.USERPASSWORD</td>
+            <td><a href="/Home/Delete/@ktgr.USERID" class="btn hover"><text style="color:darkred">Delete</text></a> </td>
+            <td><a href="/Home/Update/@ktgr.USERID" class="btn hover"><text style="color:forestgreen">Update</text></a> </td>
+        </tr>
+        }
+    </tbody>
+</table>

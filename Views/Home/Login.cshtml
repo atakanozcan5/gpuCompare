@@ -1,0 +1,46 @@
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .btn {
+        background-color: #2e2e2e;
+    }
+
+    .btn:hover {
+        background-color: #808080;
+    }
+    .form-control:focus {
+        border-color: black;
+        outline: 0;
+        -webkit-box-shadow: inset 0px 0px 0px black, 1px 1px 5px black;
+        box-shadow: inset 0px 0px 0px black, 1px 1px 5px black;
+    }
+</style>
+
+<h2>Login</h2>
+
+<div class="form-group">
+    <div class="form-group">
+        <input class="form-control" type="text" name="UserName" placeholder="UserName">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="password" name="Password" placeholder="Password">
+    </div>
+    <button class="btn" type="submit" style="color:white">Login</button>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            // Setting focus
+            $('input[name="UserName"]').focus();
+            // Setting width of the alert box
+            var formWidth = $('.bootstrap-admin-login-form').innerWidth();
+            var alertPadding = parseInt($('.alert').css('padding'));
+            $('.alert').width(formWidth - 2 * alertPadding);
+        });
+    </script>
+}

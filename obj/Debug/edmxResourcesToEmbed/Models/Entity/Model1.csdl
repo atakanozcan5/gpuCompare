@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gpu_databaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="category_table">
+    <Key>
+      <PropertyRef Name="CATEGORYID" />
+    </Key>
+    <Property Name="CATEGORYID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CATEGORYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="gpu_table" Relationship="Self.FK_gpu_table_category_table" FromRole="category_table" ToRole="gpu_table" />
+  </EntityType>
+  <EntityType Name="gpu_table">
+    <Key>
+      <PropertyRef Name="GPUID" />
+    </Key>
+    <Property Name="GPUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GPUNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GPUCATEGORY" Type="Int16" />
+    <Property Name="GPUCORECLOCK" Type="Int32" />
+    <Property Name="GPUMEMORYCLOCK" Type="Int32" />
+    <Property Name="GPUMAXMEMORY" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="GPUPRICE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="GPUG3D" Type="Int32" />
+    <NavigationProperty Name="category_table" Relationship="Self.FK_gpu_table_category_table" FromRole="gpu_table" ToRole="category_table" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="user_table">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USERPASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_gpu_table_category_table">
+    <End Role="category_table" Type="Self.category_table" Multiplicity="0..1" />
+    <End Role="gpu_table" Type="Self.gpu_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category_table">
+        <PropertyRef Name="CATEGORYID" />
+      </Principal>
+      <Dependent Role="gpu_table">
+        <PropertyRef Name="GPUCATEGORY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="gpu_databaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="category_table" EntityType="Self.category_table" />
+    <EntitySet Name="gpu_table" EntityType="Self.gpu_table" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="user_table" EntityType="Self.user_table" />
+    <AssociationSet Name="FK_gpu_table_category_table" Association="Self.FK_gpu_table_category_table">
+      <End Role="category_table" EntitySet="category_table" />
+      <End Role="gpu_table" EntitySet="gpu_table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

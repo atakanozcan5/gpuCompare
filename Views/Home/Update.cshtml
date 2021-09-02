@@ -1,0 +1,40 @@
+﻿@model deneme.Models.Entity.gpu_table
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update Page</h2>
+
+@using (Html.BeginForm("UpdateToDB", "Home", FormMethod.Post))
+            {
+            <div class="form-group">
+                @Html.LabelFor(m => m.GPUID, new { @type = "text" })
+                @Html.TextBoxFor(m => m.GPUID, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.GPUNAME)
+                @Html.TextBoxFor(m => m.GPUNAME, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.GPUCATEGORY)
+                @Html.TextBoxFor(m => m.GPUCATEGORY, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.GPUCORECLOCK)
+                @Html.TextBoxFor(m => m.GPUCORECLOCK, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.GPUMEMORYCLOCK)
+                @Html.TextBoxFor(m => m.GPUMEMORYCLOCK, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.GPUMAXMEMORY)
+                @Html.TextBoxFor(m => m.GPUMAXMEMORY, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.GPUPRICE)
+                @Html.TextBoxFor(m => m.GPUPRICE, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => m.GPUG3D)
+                @Html.TextBoxFor(m => m.GPUG3D, new { @class = "form-control" })
+            </div>
+            <div>
+                <br />
+                <button class="btn btn-warning">Update Category</button>
+            </div>            
+}

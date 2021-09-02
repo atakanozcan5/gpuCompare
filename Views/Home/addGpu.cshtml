@@ -1,0 +1,61 @@
+﻿@model deneme.db_extension.ViewDataItems
+@*@model deneme.Models.Entity.gpu_table*@
+@{
+    ViewBag.Title = "addGpu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .btn {
+        background-color: #2e2e2e;
+    }
+
+        .btn:hover {
+            background-color: #808080;
+        }
+
+    .form-control:focus {
+        border-color: black;
+        outline: 0;
+        -webkit-box-shadow: inset 0px 0px 0px black, 1px 1px 5px black;
+        box-shadow: inset 0px 0px 0px black, 1px 1px 5px black;
+    }
+</style>
+<h1>Add GPU</h1>
+<form class="form-group" method="post">
+    <div>
+        <input class="form-control" type="text" name="GPUNAME" placeholder="GPU NAME" required="true">
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+        @Html.DropDownList("GPUCATEGORY", Model.CategoryList, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <input class="form-control" type="text" name="GPUCORECLOCK" placeholder="GPU CORE CLOCK" title="Type: MHz" required="true">
+    </div>
+
+    <div>
+        <input class="form-control" type="text" name="GPUMEMORYCLOCK" placeholder="GPU MEMORY CLOCK" title="Type: Mhz" required="true">
+    </div>
+
+    <div>
+        <input class="form-control" type="text" name="GPUMAXMEMORY" placeholder="GPU MAX MEMORY" title="Type: MB" required="true">
+    </div>
+
+    <div>
+        <input class="form-control" type="text" name="GPUPRICE" placeholder="GPU PRICE" title="Type: Dollar($)" required="true">
+    </div>
+
+    <div>
+        <input class="form-control" type="text" name="GPUG3D" placeholder="GPU G3D MARK" required="true">
+    </div>
+
+    <br />
+
+    <button class="btn" style="color:white">ADD GPU</button>
+</form>
+
+

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .btn {
+        background-color: #2e2e2e;
+    }
+    .btn:hover{
+        background-color:#808080;
+    }
+    .form-control:focus {
+        border-color: black;
+        outline: 0;
+        -webkit-box-shadow: inset 0px 0px 0px black, 1px 1px 5px black;
+        box-shadow: inset 0px 0px 0px black, 1px 1px 5px black;
+    }
+</style>
+
+<h2>Register</h2>
+
+<form class="form-group" method="post">
+    <div >
+        <input class="form-control" type="text" name="USERNAME" placeholder="UserName" required="true">
+    </div>
+    <br />
+    <div >
+        <input class="form-control" type="password" name="USERPASSWORD" placeholder="Password" required="true">
+    </div>
+    <br />
+    <button href="/Home/Register" class="btn btn-hover" type="submit" style="color:white">Register</button>
+</form>

@@ -1,0 +1,182 @@
+﻿@using deneme.Models.Entity
+@model List<gpu_table>
+@{
+    ViewBag.Title = "GPU";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="~/Content/searchbox.css" />
+
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Karma", sans-serif
+    }
+
+    .w3-bar-block .w3-bar-item {
+        padding: 20px
+    }
+</style>
+<body>
+    <div class="w3-row-padding w3-center" id="GPU">
+        <input type="text" name="search" placeholder="Search..">
+    </div>
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:50px">
+
+        <!-- First Photo Grid-->
+        <div class="w3-row-padding w3-center" id="GPU">
+            <div class="w3-quarter">
+                <img src="/images/3060.png" alt="3060" style="width:100%">
+                <h3>Asus ROG Strix 3060</h3>
+                <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/images/3060ti.png" alt="3060ti" style="width:100%">
+                <h3>Asus ROG Strix 3060ti</h3>
+                <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/images/3070.png" alt="3070" style="width:100%">
+                <h3>Asus ROG Strix 3070</h3>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                <p>What else?</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/images/3080.png" alt="3080" style="width:100%">
+                <h3>Asus ROG Strix 3080</h3>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+
+        <!-- Second Photo Grid-->
+        <div class="w3-row-padding  w3-center">
+            <div class="w3-quarter">
+                <img src="/images/6700.png" alt="Popsicle" style="width:100%">
+                <h3>Asus ROG Strix 6700</h3>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/images/6700xt.png" alt="Salmon" style="width:100%">
+                <h3>Asus ROG Strix 6700xt</h3>
+                <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/images/6800.png" alt="Sandwich" style="width:100%">
+                <h3>Asus TUF Gaming 6800</h3>
+                <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/images/6800xt.png" alt="Croissant" style="width:100%">
+                <h3>Asus TUF Gaming 6800xt</h3>
+                <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="w3-center w3-padding-32">
+            <div class="w3-bar">
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+                <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+            </div>
+        </div>
+
+        <div class="w3-row-padding w3-center w3-padding-64" id="pricing">
+            <h2>GPU</h2>
+            <p>Choose a pricing plan that fits your needs.</p><br>
+            <div class="w3-third w3-margin-bottom">
+                <ul class="w3-ul w3-border w3-hover-shadow">
+                    <li class="w3-theme">
+                        <p class="w3-xlarge">
+                            <img src="/images/3080.png" alt="3080" style="width:100%">
+                        </p>
+                    </li>
+                    <li class="w3-padding-16"><b>10GB</b> Storage</li>
+                    <li class="w3-padding-16"><b>10</b> Emails</li>
+                    <li class="w3-padding-16"><b>10</b> Domains</li>
+                    <li class="w3-padding-16"><b>Endless</b> Support</li>
+                    <li class="w3-padding-16">
+                        <h2 class="w3-wide"><i class="fa fa-usd"></i> 10</h2>
+                        <span class="w3-opacity">per month</span>
+                    </li>
+                    <li class="w3-theme-l5 w3-padding-24">
+                        <button class="w3-button w3-theme w3-padding-large">
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> Add to Compare</label><br>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <ul class="w3-ul w3-border w3-hover-shadow">
+                    <li class="w3-theme-l2">
+                        <p class="w3-xlarge">
+                            <img src="/images/6800xt.png" alt="6800xt" style="width:100%">
+                        </p>
+                    </li>
+                    <li class="w3-padding-16"><b>25GB</b> Storage</li>
+                    <li class="w3-padding-16"><b>25</b> Emails</li>
+                    <li class="w3-padding-16"><b>25</b> Domains</li>
+                    <li class="w3-padding-16"><b>Endless</b> Support</li>
+                    <li class="w3-padding-16">
+                        <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
+                        <span class="w3-opacity">per month</span>
+                    </li>
+                    <li class="w3-theme-l5 w3-padding-24">
+                        <button class="w3-button w3-theme w3-padding-large">
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="moto">
+                            <label for="vehicle2"> Add to Compare</label><br>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <ul class="w3-ul w3-border w3-hover-shadow">
+                    <li class="w3-theme">
+                        <p class="w3-xlarge">
+                            <img src="/images/3070.png" alt="3070" style="width:100%">
+                        </p>
+                    </li>
+                    <!--
+                    Son Ekran kartının özelliklerini yazacağım yer.
+                    -->
+                    <h2 class="w3-wide"><i class="fa fa-usd"></i> 50</h2>
+                    <span class="w3-opacity">per month</span>
+                    </li>
+                    <li class="w3-theme-l5 w3-padding-24">
+                        <button class="w3-button w3-theme w3-padding-large">
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="car">
+                            <label for="vehicle3"> Add to Compare</label><br>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+                // Script to open and close sidebar
+                function w3_open() {
+                    document.getElementById("mySidebar").style.display = "block";
+                }
+
+                function w3_close() {
+                    document.getElementById("mySidebar").style.display = "none";
+                }
+        </script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@using deneme.Models.Entity
+
+@model List<gpu_table>
+@{
+    ViewBag.Title = "NVIDIA";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    th {
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    text {
+        text-align: center;
+    }
+
+    tr:hover {
+        background-color: black;
+    }
+</style>
+
+<table class="table" style="background-color:forestgreen">
+    <tr>
+        <th style="color: yellow">GPU Adı</th>
+        <th style="color: yellow ">GPU Category</th>
+        <th style="color: yellow ">GPU Core Clock</th>
+        <th style="color: yellow ">GPU Memory Clock</th>
+        <th style="color: yellow ">GPU Max Memory</th>
+        <th style="color: yellow ">GPU Price</th>
+        <th style="color: yellow ">GPU G3D Mark</th>
+    </tr>
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+            <tr>
+                @if (@ktgr.GPUCATEGORY == 1)
+                {
+                    <td style="color:white">@ktgr.GPUNAME</td>
+                    <td style="color:white">NVIDIA</td>
+                    <td style="color:white">@ktgr.GPUCORECLOCK</td>
+                    <td style="color:white">@ktgr.GPUMEMORYCLOCK</td>
+                    <td style="color:white">@ktgr.GPUMAXMEMORY</td>
+                    <td style="color:white">@ktgr.GPUPRICE</td>
+                    <td style="color:white">@ktgr.GPUG3D</td>
+                }
+            </tr>
+
+        }
+    </tbody>
+</table>

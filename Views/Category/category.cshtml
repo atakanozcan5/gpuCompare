@@ -1,0 +1,24 @@
+﻿@using deneme.Models.Entity;
+@model List<category_table>
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Category</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+    </tr>
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+            <tr>
+                <th>@ktgr.CATEGORYID</th>
+                <td>@ktgr.CATEGORYNAME</td>
+            </tr>
+        }
+    </tbody>
+</table>
